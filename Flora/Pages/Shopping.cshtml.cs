@@ -54,7 +54,7 @@ namespace Flora.Pages
             // Filter by product category
             if (!string.IsNullOrEmpty(ProductCategory))
             {
-                products = products.Where(x => x.Category == ProductCategory);
+                products = products.Where(p => p.Category.Contains(ProductCategory));
             }
 
             // Populate categories
@@ -63,6 +63,8 @@ namespace Flora.Pages
             // Get filtered products
             Product = await products.ToListAsync();
         }
+
+
 
         public IActionResult OnPostAddToCart(int id)
         {
@@ -87,9 +89,13 @@ namespace Flora.Pages
 
             SessionHelper.SetObjectAsJson(HttpContext.Session, cartKey, cart);
 
-            // Stay on the same page
+            // Set TempData to pass the notification message
+            TempData["Message"] = $"{product.Name} has been added to your cart.";
+
             return RedirectToPage();
         }
+
+
     }
 }
 

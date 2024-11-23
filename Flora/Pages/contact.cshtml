@@ -4,16 +4,26 @@
     ViewData["Title"] = "Contact Us";
 }
 
-<div class="container" onload="ContactValidation()">
+<div class="container">
     <h1>Contact Us</h1>
     <p>If you have any inquiries, feedback, or complaints, please fill out the form below:</p>
-    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="blue_pink_box">
+    <form id="Form" action="https://api.web3forms.com/submit" method="POST" class="blue_pink_box">
         <input type="hidden" name="access_key" value="b29a73cf-d556-4160-8997-daabf0926ea5">
         <input type="text" name="name" placeholder="Your Name" class="contact_inputs">
         <input type="email" name="email" placeholder="Your Email" class="contact_inputs">
         <input type="text" name="subject" placeholder="Subject" class="contact_inputs">
         <textarea name="message" placeholder="Your Message" class="contact_inputs"></textarea>
+
+        <!-- CAPTCHA Question -->
+        <div>
+            <label id="captchaQ" style="display: block; margin: 10px 0;"></label>
+            <input type="text" id="captchaInput" placeholder="Enter your answer" class="contact_inputs" />
+        </div>
+
         <button type="submit">Submit</button>
     </form>
 </div>
-    </div>
+
+@section Scripts {
+    <script src="~/js/contactValidation.js"></script>
+}

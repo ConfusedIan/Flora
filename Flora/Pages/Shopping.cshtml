@@ -6,8 +6,20 @@
 
 <h1>Welcome @Model.WelcomeUsername to Flora</h1>
 
-<!-- Link to Cart -->
-<a asp-page="Cart" class="btn btn-secondary" style="margin-bottom: 20px;">View Cart</a>
+<a asp-page="Cart" class="btn btn-secondary view-cart">View Cart</a>
+
+<!-- Notification Banner -->
+<div id="notification" class="notification"></div>
+
+<!-- Hidden element to pass TempData message -->
+@if (TempData["Message"] != null)
+{
+    <div id="tempDataMessage" data-message="@TempData["Message"]" class="hidden"></div>
+}
+else
+{
+    <div id="tempDataMessage" data-message="" class="hidden"></div>
+}
 
 <!-- Search Form -->
 <form method="get">
@@ -40,11 +52,10 @@
                 <td>@item.Description</td>
                 <td align="center">@item.Category</td>
                 <td>
-                    <img src="~/Assets/@item.Image" width="120" height="80" />
+                    <img src="~/Images/@item.Image" width="120" height="80" />
                 </td>
                 <td>SAR @item.Price</td>
                 <td>
-                    <!-- Add to Cart Button -->
                     <form method="post" asp-page-handler="AddToCart" asp-route-id="@item.Id">
                         <button type="submit" class="btn btn-primary">Add to Cart</button>
                     </form>
@@ -53,3 +64,7 @@
         }
     </tbody>
 </table>
+
+@section Scripts {
+    <script src="~/js/contactValidation.js"></script>
+}
