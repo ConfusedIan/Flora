@@ -1,0 +1,28 @@
+﻿@page
+@model Flora.Pages.RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h3>Registration Form</h3>
+@Model.Msg
+
+<form method="post">
+    <table>
+        <tr>
+            <td>Username</td>
+            <td><input type="text" asp-for="formUsername" /></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" asp-for="formPassword" /></td>
+        </tr>
+        <tr>
+            <td>Confirm Password</td>
+            <td><input type="password" asp-for="confirmPassword" /></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Register" /></td>
+        </tr>
+    </table>
+</form>

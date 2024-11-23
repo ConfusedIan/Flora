@@ -1,0 +1,64 @@
+﻿@page
+@model Flora.Pages.CartModel
+@{
+    ViewData["Title"] = "Shopping Cart";
+}
+
+<h3> Cart </h3>
+
+<form method="post" asp-page="cart" asp-page-handler="update">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Photo</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.cart != null && Model.cart.Any())
+            {
+                @foreach (var item in Model.cart)
+                {
+                    <tr align="center">
+                        <td>
+                            <a asp-page="cart" asp-page-handler="delete" asp-route-id="@item.Product.Id">X</a>
+                        </td>
+                        <td>@item.Product.Name</td>
+                        <td>@item.Product.Description</td>
+                        <td>@item.Product.Category</td>
+                        <td>
+                            <img src="~/Images/@item.Product.Image" width="120" height="80" />
+                        </td>
+                        <td>SAR @item.Product.Price</td>
+                        <td>
+                            <!-- Input for quantity with product ID as part of the name -->
+                            <input type="number" name="quantities[@item.Product.Id]" value="@item.Quantity" min="1" style="width: 50px;" />
+                        </td>
+                        <td>SAR @(item.Product.Price * item.Quantity)</td>
+                    </tr>
+                }
+                <tr>
+                    <td colspan="7" align="right">Total</td>
+                    <td align="center">SAR @Model.Total</td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td colspan="8" align="center">Your cart is empty.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <input type="submit" value="Update Cart" />
+</form>
+
+<a asp-page="Shopping">Continue Shopping</a>
+<br />
+<a asp-page="/Index" asp-page-handler="Logout">Logout</a>

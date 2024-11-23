@@ -1,0 +1,157 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* General Styles */
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    background-color: #fffdf9;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #8b0000;
+}
+
+/* Header */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    background: url('Assets/flowers-hero.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 4em 1em;
+}
+
+.hero .cta-button {
+    background-color: #8b0000;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Categories Section */
+.categories {
+    display: flex;
+    justify-content: space-around;
+    padding: 2em 1em;
+}
+
+.category {
+    text-align: center;
+    max-width: 300px;
+}
+
+.category img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.category h3 {
+    margin-top: 0.5em;
+}
+
+/* Offers Section */
+.offers {
+    text-align: center;
+    background: #f4f4f4;
+    padding: 2em 1em;
+}
+
+.offers .cta-button {
+    background-color: #8b0000;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background: #8b0000;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+/* products */
+.product-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 2em 1em;
+}
+
+.product {
+    text-align: center;
+    max-width: 300px;
+    margin: 1em;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1em;
+    background-color: #fff;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product h2 {
+    color: #8b0000;
+    margin: 0.5em 0;
+}
+
+.product button {
+    background-color: #8b0000;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background-color: #a52a2a;
+}

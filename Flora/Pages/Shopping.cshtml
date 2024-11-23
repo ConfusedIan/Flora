@@ -1,0 +1,55 @@
+﻿@page
+@model Flora.Pages.ShoppingModel
+@{
+    ViewData["Title"] = "Welcome To Flora";
+}
+
+<h1>Welcome @Model.WelcomeUsername to Flora</h1>
+
+<!-- Link to Cart -->
+<a asp-page="Cart" class="btn btn-secondary" style="margin-bottom: 20px;">View Cart</a>
+
+<!-- Search Form -->
+<form method="get">
+    <p>
+        <select asp-for="ProductCategory" asp-items="Model.Categories">
+            <option value="">All</option>
+        </select>
+        <label>Search: <input type="text" asp-for="SearchString" /></label>
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<!-- Products Table -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Photo</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Product)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td align="center">@item.Category</td>
+                <td>
+                    <img src="~/Images/@item.Image" width="120" height="80" />
+                </td>
+                <td>SAR @item.Price</td>
+                <td>
+                    <!-- Add to Cart Button -->
+                    <form method="post" asp-page-handler="AddToCart" asp-route-id="@item.Id">
+                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
