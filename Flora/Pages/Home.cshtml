@@ -1,4 +1,44 @@
 ﻿@page
 @model Flora.Pages.HomeModel
 @{
+    ViewData["Title"] = "Welcome to Flora";
 }
+
+<header class="hero">
+    <h1>Welcome to Flora</h1>
+    <p>Your one-stop shop for beautiful flower bouquets and arrangements.</p>
+    <a href="/Products/Index" class="cta-button">Browse Products</a>
+</header>
+
+<main>
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="category">
+            <img src="~/Images/roses.jpg" alt="Roses">
+            <h3>Roses</h3>
+            <p>Elegant and timeless roses for every occasion.</p>
+        </div>
+        <div class="category">
+            <img src="~/Images/tulips.jpg" alt="Tulips">
+            <h3>Tulips</h3>
+            <p>Vibrant tulips to brighten anyone's day.</p>
+        </div>
+        <div class="category">
+            <img src="~/Images/lilies.jpg" alt="Lilies">
+            <h3>Lilies</h3>
+            <p>Delicate lilies for moments of celebration.</p>
+        </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section class="offers">
+        <h2>Special Offers</h2>
+        <p>Check out our latest deals and discounts on premium bouquets.</p>
+        <a href="/Products/Index" class="cta-button">View Offers</a>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Flora. All rights reserved.</p>
+</footer>
+
