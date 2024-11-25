@@ -488,3 +488,153 @@ main h1 {
     }
 
 
+
+
+/* Login Page */
+.login-page {
+    margin-top: 100px; /* Add space below the fixed navbar */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    width: 100%;
+}
+
+/* Login Title */
+.login-title {
+    font-size: 2rem;
+    color: #56091F;
+    font-family: 'Georgia', serif;
+    margin-bottom: 2rem;
+}
+
+/* Login Container */
+.login-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Login Form */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+    /* Form Labels */
+    .login-form label {
+        font-weight: bold;
+        font-size: 0.9rem;
+        color: #333;
+        text-align: left;
+        display: block;
+    }
+
+    /* Input Fields */
+    .login-form input {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1;
+    }
+
+
+/* Outer container styling - no shadow */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    /* Removed the outer box-shadow */
+}
+
+/* Contact form (inner box) styling - keeps shadow */
+.blue_pink_box {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Inner box shadow */
+}
+
+/* Header styles */
+.container h1 {
+    font-size: 2rem;
+    color: #4a4a4a;
+    margin-bottom: 10px;
+}
+
+/* Paragraph description */
+.container p {
+    font-size: 1rem;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+/* Input fields and textarea styling */
+.contact_inputs {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Keeps shadow on input fields */
+}
+
+    /* Input and textarea focus styles */
+    .contact_inputs:focus {
+        outline: none;
+        border-color: #8b0000;
+        box-shadow: 0 0 5px rgba(139, 0, 0, 0.3);
+    }
+
+/* CAPTCHA question styles */
+#captchaQ {
+    font-size: 1rem;
+    color: #4a4a4a;
+    margin-top: 10px;
+}
+
+/* CAPTCHA input field */
+#captchaInput {
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+/* Submit button styling */
+button[type="submit"] {
+    background-color: #8b0000;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    /* Submit button hover effect */
+    button[type="submit"]:hover {
+        background-color: #a52a2a;
+    }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .contact_inputs {
+        font-size: 0.9rem;
+    }
+
+    button[type="submit"] {
+        font-size: 0.9rem;
+    }
+}
+

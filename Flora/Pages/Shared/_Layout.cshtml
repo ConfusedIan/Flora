@@ -24,7 +24,18 @@
                 <li><a class="@(ViewData["Title"] == "Contact Us" ? "active" : "")" asp-area="" asp-page="/contact">Contact Us</a></li>
                 <li><a class="@(ViewData["Title"] == "FAQs" ? "active" : "")" asp-area="" asp-page="/faqs">FAQs</a></li>
                 <li><a class="@(ViewData["Title"] == "Return Policy" ? "active" : "")" asp-area="" asp-page="/return-policy">Return Policy</a></li>
-                <li><a class="@(ViewData["Title"] == "Login" ? "active" : "")" asp-area="" asp-page="/Index">Login</a></li>
+                <!-- Login Link with Image Only -->
+                <li>
+                    <a class="@(ViewData["Title"] == "Login" ? "active" : "")" asp-area="" asp-page="/Index">
+                        <img src="~/Assets/login-icon.png" alt="Login" style="width: 24px; height: 24px;" />
+                    </a>
+                </li>
+                <!-- Cart Link with Image Only -->
+                <li>
+                    <a class="@(ViewData["Title"] == "Cart" ? "active" : "")" asp-area="" asp-page="/Cart">
+                        <img src="~/Assets/cart-icon.webp" alt="Cart" style="width: 24px; height: 24px;" />
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -42,9 +53,3 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
-
-
-
-
-
-

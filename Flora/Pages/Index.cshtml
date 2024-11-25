@@ -4,27 +4,25 @@
     ViewData["Title"] = "Login";
 }
 
-<h3>Login Form</h3>
-@Model.Msg
 
-<form method="post" asp-page="Index">
-    <table>
-        <tr>
-            <td>Username</td>
-            <td><input type="text" asp-for="@Model.formUsername" /></td>
-        </tr>
-        <tr>
-            <td>Password</td>
-            <td>
-                <input type="password" asp-for="@Model.formPassword" />
-            </td>
-        </tr>
-        <tr>
-            <td> <input type="submit" value="Login" /> </td>
-        </tr>
-    </table>
-</form>
+<main class="login-page">
+    <h1 class="login-title">Login</h1>
+    <div class="login-container">
+        <form class="login-form">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required />
 
-<p>
-    Don't have an account? <a asp-page="Register">Register here</a>.
-</p>
+            <label for="password">Password</label>
+            <div class="password-container">
+                <input type="password" id="password" name="password" placeholder="Enter your password" required />
+                <a href="/forgot-password" class="forgot-password-link">Forgot your password?</a>
+            </div>
+
+            <button type="submit" class="login-button">Sign In</button>
+        </form>
+        <p class="create-account-text">
+            <a href="/register" class="create-account-link">Create account</a>
+        </p>
+    </div>
+</main>
+
