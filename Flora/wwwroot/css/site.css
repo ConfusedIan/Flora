@@ -638,3 +638,67 @@ button[type="submit"] {
     }
 }
 
+/ /* Center the table container in the middle of the page */
+body {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    min-height: 100vh; /* Ensure it takes the full viewport height */
+    margin: 0; /* Remove default body margins */
+    background-color: #f9f9f9; /* Optional background color */
+}
+
+/* Table styling */
+.table {
+    width: 90%; /* Adjust width as needed */
+    max-width: 800px; /* Limit the maximum width */
+    margin: 0 auto; /* Ensure the table remains centered within the container */
+    border-collapse: collapse; /* Remove gaps between cells */
+    background-color: #fff; /* White background for the table */
+    border-radius: 8px; /* Optional rounded corners */
+    overflow: hidden; /* Avoid overflow issues */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+    /* Table Header */
+    .table th {
+        background-color: #8b0000; /* Dark red background */
+        color: #fff; /* White text for contrast */
+        padding: 12px; /* Padding for header cells */
+        text-align: center; /* Center-align text */
+        font-size: 1rem; /* Consistent font size */
+        text-transform: uppercase; /* Optional uppercase */
+    }
+
+    /* Table Rows */
+    .table td {
+        padding: 12px; /* Padding for table cells */
+        text-align: center; /* Center-align content */
+        border-bottom: 1px solid #ddd; /* Subtle border between rows */
+    }
+
+    /* Empty Cart Message */
+    .table tbody tr td[colspan="8"] {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #666;
+        padding: 20px;
+        text-align: center;
+    }
+
+/* Button styling */
+input[type="submit"] {
+    margin: 20px auto;
+    display: block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #8b0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    input[type="submit"]:hover {
+        background-color: #a52a2a;
+    }
