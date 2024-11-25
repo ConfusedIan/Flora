@@ -4,25 +4,31 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Flora</title>
+    <!-- Bootstrap and Site CSS -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Flora.styles.css" asp-append-version="true" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/custom-navbar.css" asp-append-version="true" />
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <a class="brand" asp-area="" asp-page="/Home">Flora</a>
+            <a class="brand" asp-area="" asp-page="/Home">
+                <img src="~/Assets/flora-logo.jpg" alt="Flora Logo" />
+            </a>
             <ul>
-                <li><a asp-area="" asp-page="/Home">Home</a></li>
-                <li><a asp-area="" asp-page="/Shopping">Shopping</a></li>
-                <li><a asp-area="" asp-page="/about">About Us</a></li>
-                <li><a asp-area="" asp-page="/contact">Contact Us</a></li>
-                <li><a asp-area="" asp-page="/faqs">FAQs</a></li>
-                <li><a asp-area="" asp-page="/return-policy">Return Policy</a></li>
-                <li><a asp-area="" asp-page="/Index">Login</a></li>
+                <li><a class="@(ViewData["Title"] == "Home" ? "active" : "")" asp-area="" asp-page="/Home">Home</a></li>
+                <li><a class="@(ViewData["Title"] == "Shopping" ? "active" : "")" asp-area="" asp-page="/Shopping">Shopping</a></li>
+                <li><a class="@(ViewData["Title"] == "About Us" ? "active" : "")" asp-area="" asp-page="/about">About Us</a></li>
+                <li><a class="@(ViewData["Title"] == "Contact Us" ? "active" : "")" asp-area="" asp-page="/contact">Contact Us</a></li>
+                <li><a class="@(ViewData["Title"] == "FAQs" ? "active" : "")" asp-area="" asp-page="/faqs">FAQs</a></li>
+                <li><a class="@(ViewData["Title"] == "Return Policy" ? "active" : "")" asp-area="" asp-page="/return-policy">Return Policy</a></li>
+                <li><a class="@(ViewData["Title"] == "Login" ? "active" : "")" asp-area="" asp-page="/Index">Login</a></li>
             </ul>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -36,3 +42,9 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+
+
+
+
+
