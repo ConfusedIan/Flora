@@ -1,28 +1,32 @@
 ﻿@page
-@model IndexModel
+@model Flora.Pages.IndexModel
 @{
     ViewData["Title"] = "Login";
 }
 
-
 <main class="login-page">
     <h1 class="login-title">Login</h1>
     <div class="login-container">
-        <form class="login-form">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required />
+        <!-- Display error message if login fails -->
+        @if (!string.IsNullOrEmpty(Model.Msg))
+        {
+            <div class="error-message">@Model.Msg</div>
+        }
 
-            <label for="password">Password</label>
+        <!-- Login form -->
+        <form class="login-form" method="post">
+            <label for="formUsername">Username</label>
+            <input type="text" id="formUsername" name="formUsername" placeholder="Enter your username" value="@Model.formUsername" required />
+
+            <label for="formPassword">Password</label>
             <div class="password-container">
-                <input type="password" id="password" name="password" placeholder="Enter your password" required />
-                <a href="/forgot-password" class="forgot-password-link">Forgot your password?</a>
+                <input type="password" id="formPassword" name="formPassword" placeholder="Enter your password" required />
+                <a href="/register" class="create-account-link">Don't have an account?</a>
             </div>
 
             <button type="submit" class="login-button">Sign In</button>
         </form>
-        <p class="create-account-text">
-            <a href="/register" class="create-account-link">Create account</a>
-        </p>
     </div>
 </main>
+
 

@@ -10,6 +10,21 @@
     <link rel="stylesheet" href="~/Flora.styles.css" asp-append-version="true" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="~/css/custom-navbar.css" asp-append-version="true" />
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 0.5em 2em;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 12px;
+            border: none;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,13 +39,11 @@
                 <li><a class="@(ViewData["Title"] == "Contact Us" ? "active" : "")" asp-area="" asp-page="/contact">Contact Us</a></li>
                 <li><a class="@(ViewData["Title"] == "FAQs" ? "active" : "")" asp-area="" asp-page="/faqs">FAQs</a></li>
                 <li><a class="@(ViewData["Title"] == "Return Policy" ? "active" : "")" asp-area="" asp-page="/return-policy">Return Policy</a></li>
-                <!-- Login Link with Image Only -->
                 <li>
                     <a class="@(ViewData["Title"] == "Login" ? "active" : "")" asp-area="" asp-page="/Index">
                         <img src="~/Assets/login-icon.png" alt="Login" style="width: 24px; height: 24px;" />
                     </a>
                 </li>
-                <!-- Cart Link with Image Only -->
                 <li>
                     <a class="@(ViewData["Title"] == "Cart" ? "active" : "")" asp-area="" asp-page="/Cart">
                         <img src="~/Assets/cart-icon.webp" alt="Cart" style="width: 24px; height: 16px;" />
