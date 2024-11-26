@@ -9,12 +9,19 @@
     <p>If you have any inquiries, feedback, or complaints, please fill out the form below:</p>
     <form id="Form" action="https://api.web3forms.com/submit" method="POST" class="blue_pink_box">
         <input type="hidden" name="access_key" value="b29a73cf-d556-4160-8997-daabf0926ea5">
+
+        <label for="name">Your Name:</label>
         <input type="text" name="name" placeholder="Your Name" class="contact_inputs">
+
+        <label for="email">Your Email:</label>
         <input type="email" name="email" placeholder="Your Email" class="contact_inputs">
+
+        <label for="subject">The Subject:</label>
         <input type="text" name="subject" placeholder="Subject" class="contact_inputs">
+
+        <label for="message">Your Message:</label>
         <textarea name="message" placeholder="Your Message" class="contact_inputs"></textarea>
 
-        <!-- CAPTCHA Question -->
         <div>
             <label id="captchaQ" style="display: block; margin: 10px 0;"></label>
             <input type="text" id="captchaInput" placeholder="Enter your answer" class="contact_inputs" />

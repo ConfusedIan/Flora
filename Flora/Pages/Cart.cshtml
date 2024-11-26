@@ -1,13 +1,15 @@
 ﻿@page
 @model Flora.Pages.CartModel
 @{
-    ViewData["Title"] = "Shopping Cart";
+    ViewData["Title"] = "Cart";
 }
+
 <main>
+
     <h1> Cart </h1>
 
-    <form method="post" asp-page="cart" asp-page-handler="update">
-        <div class="table-container">
+    <div class="table-container">
+        <form method="post" asp-page="cart" asp-page-handler="update" class="cartform">
             <table class="table">
                 <thead>
                     <tr>
@@ -38,7 +40,6 @@
                                 </td>
                                 <td>SAR @item.Product.Price</td>
                                 <td>
-                                    <!-- Input for quantity with product ID as part of the name -->
                                     <input type="number" name="quantities[@item.Product.Id]" value="@item.Quantity" min="1" style="width: 50px;" />
                                 </td>
                                 <td>SAR @(item.Product.Price * item.Quantity)</td>
@@ -57,10 +58,10 @@
                     }
                 </tbody>
             </table>
-        </div>
-        <input type="submit" value="Update Cart" />
-    </form>
+            <input type="submit" value="Update Cart" />
+            <a asp-page="Shopping">Continue Shopping</a>
+            <a asp-page="/Index" asp-page-handler="Logout">Logout</a>
+        </form>
+    </div>
+</main>
 
-    <a asp-page="Shopping">Continue Shopping</a>
-    <br />
-    <a asp-page="/Index" asp-page-handler="Logout">Logout</a>

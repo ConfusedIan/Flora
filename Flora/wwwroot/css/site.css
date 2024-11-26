@@ -21,86 +21,115 @@ html {
     min-height: 100%;
 }
 
-/* Body Styling - Fixed */
+/* Body Styling */
 body {
-    display: flex; /* Flexbox for centering */
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
-    min-height: 100vh; /* Full viewport height */
-    margin: 0; /* Reset default margins */
-    background-color: #f9f9f9; /* Light gray background */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    min-height: 100vh; 
+    margin: 0; 
+    background-color: #f9f9f9; 
     font-family: Arial, Helvetica, sans-serif;
-    color: #000; /* Default text color */
+    color: #000;
 }
 
 main {margin-top: 60px;}
 
 main h1 {
-    font-size: 2.5rem; /* Prominent title */
-    color: #56091F; /* Brand color */
+    font-size: 2.5rem;
+    color: #56091F;
     text-align: center;
 }
 
 /* Navbar Styling */
 .navbar {
     display: flex;
-    justify-content: space-between; /* Space items evenly */
-    align-items: center; /* Center items vertically */
-    background-color: #ffffff; /* White background */
-    padding: 0.5em 2em; /* Add padding for spacing */
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 12px; /* Subtle shadow */
-    border: none; /* Ensure no border */
-    width: 100%; /* Ensure it spans the full width */
-    position: fixed; /* Keeps it at the top of the page */
-    top: 0; /* Fix it at the top */
-    z-index: 1000; /* Ensure it stays above other content */
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 0.5em 2em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 12px;
+    border: none;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
     .navbar .brand {
-        flex-shrink: 0; /* Prevent it from shrinking */
+        flex-shrink: 0; 
     }
 
         .navbar .brand img {
-            height: 40px; /* Keep logo size consistent */
+            height: 40px;
         }
 
     .navbar ul {
-        list-style: none; /* Remove bullets */
-        display: flex; /* Flexbox for spacing */
-        justify-content: flex-end; /* Push items to the right */
-        margin: 0; /* Reset margin */
-        padding: 0; /* Reset padding */
-        flex: 1; /* Allow it to take full space */
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        flex: 1; 
     }
 
-        .navbar ul li {
-            margin: 0 1em; /* Space between menu items */
-            position: relative;
+    .navbar .icons {
+        display: flex;
+        align-items: center;
+        gap: 1em; 
+    }
+        .navbar .icons a.active::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #56091F; /* Matches the underline color for text links */
+            position: absolute;
+            bottom: -5px; /* Position the line slightly below the icon */
+            left: 0;
+        }
+    .navbar .icons {
+        display: flex;
+        align-items: center;
+        gap: 1em; /* Spacing between icons */
+        position: relative;
+    }
+
+        .navbar .icons a {
+            position: relative; /* Required for the ::after pseudo-element */
         }
 
-            .navbar ul li a {
-                text-decoration: none; /* Remove underline */
-                color: #56091F; /* Brand color */
-                font-weight: bold; /* Bold text */
-                font-size: 16px; /* Readable font size */
-                padding: 0.5em 0; /* Add padding */
-                transition: color 0.3s ease-in-out; /* Hover effect */
+    /* Navbar link styling */
+    .navbar ul li {
+        margin: 0 1em;
+        position: relative;
+    }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #56091F;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 0.5em 0;
+            transition: color 0.3s ease-in-out;
+        }
+
+            .navbar ul li a:hover {
+                color: #a02b45;
             }
 
-                .navbar ul li a:hover {
-                    color: #a02b45; /* Slightly darker shade on hover */
-                }
+            .navbar ul li a.active::after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 3px;
+                background: #56091F;
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+            }
 
-                .navbar ul li a.active::after {
-                    content: '';
-                    display: block;
-                    width: 100%;
-                    height: 3px;
-                    background: #56091F; /* Underline for active links */
-                    position: absolute;
-                    bottom: -5px;
-                    left: 0;
-                }
 
 p {
     color: black;
@@ -108,40 +137,42 @@ p {
 
 /* Table Container Styling */
 .table-container {
-    display: flex; /* Flexbox ensures centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    flex-direction: column; /* Stack elements vertically */
-    width: 90%; /* Responsive width */
-    max-width: 800px; /* Limit maximum width */
-    padding: 20px; /* Add spacing */
-    background-color: #ffffff; /* White background for contrast */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    width: 90%; 
+    max-width: 800px;
+    padding: 20px; 
+}
+
+.cartform {
+    border: none;
+    background-color: #f9f9f9
 }
 
 /* Table Styling */
 .table {
-    width: 100%; /* Full width of the container */
-    border-collapse: collapse; /* Remove gaps between cells */
-    background-color: #fff; /* White background */
-    border-radius: 8px; /* Optional rounded corners */
-    overflow: hidden; /* Prevent overflow */
+    width: 100%;
+    border-collapse: collapse; 
+    background-color: #fff;
+    border-radius: 8px; 
+    overflow: hidden;
 }
 
     .table th {
-        background-color: #8b0000; /* Dark red background */
-        color: #fff; /* White text for contrast */
-        padding: 12px; /* Padding for header cells */
-        text-align: center; /* Center-align text */
-        font-size: 1rem; /* Consistent font size */
-        text-transform: uppercase; /* Optional uppercase */
+        background-color: #8b0000; 
+        color: #fff; 
+        padding: 12px;
+        text-align: center;
+        font-size: 1rem; 
+        text-transform: uppercase; 
     }
 
     .table td {
-        padding: 12px; /* Padding for table cells */
-        text-align: center; /* Center-align content */
-        border-bottom: 1px solid #ddd; /* Subtle border between rows */
+        padding: 12px; 
+        text-align: center; 
+        border-bottom: 1px solid #ddd; 
     }
 
     /* Empty Cart Message */
@@ -188,14 +219,13 @@ a {
 /* Responsive Design */
 @media (max-width: 768px) {
     .table-container {
-        width: 95%; /* Allow more flexibility on smaller screens */
+        width: 95%; 
     }
 }
 
 
 /* Hero Section */
 .hero {
-    background: url('Assets/flowers-hero.jpg') no-repeat center center/cover;
     color: #fff;
     text-align: center;
     padding: 4em 1em;
@@ -284,6 +314,7 @@ form {
     background-color: #fff;
 }
 
+
     form label {
         font-weight: bold;
     }
@@ -365,9 +396,9 @@ p {
 }
 
 .item {
-    margin-bottom: 2rem; /* Add spacing between questions and answers */
+    margin-bottom: 2rem; 
     padding-bottom: 1rem;
-    border-bottom: 1px solid #ddd; /* Light separator for each FAQ item */
+    border-bottom: 1px solid #ddd; 
 }
 
 .Text-section ul {
@@ -447,11 +478,11 @@ p {
 
 /* Notification Banner */
 .notification {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     top: 40px;
     right: 20px;
-    background-color: #4caf50; /* Success green */
+    background-color: #4caf50; 
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -464,18 +495,18 @@ p {
 
     .notification.show-notification {
         display: block;
-        opacity: 1; /* Fade-in effect */
+        opacity: 1; 
     }
 
 .hidden {
-    display: none; /* Utility class for hidden elements */
+    display: none;
 }
 
 /* Login Page */
 .login-page {
-    margin-top: 100px; /* Add space below the fixed navbar */
+    margin-top: 100px; 
     display: flex;
-    flex-direction: column; /* Stack content vertically */
+    flex-direction: column;
     align-items: center;
     width: 100%;
 }
@@ -522,39 +553,33 @@ p {
     }
 
 
-/* Outer container styling - no shadow */
 .container {
     width: 80%;
     margin: 20px auto;
     padding: 20px;
     background-color: #f8f8f8;
     border-radius: 10px;
-    /* Removed the outer box-shadow */
 }
 
-/* Contact form (inner box) styling - keeps shadow */
 .blue_pink_box {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Inner box shadow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
-/* Header styles */
 .container h1 {
     font-size: 2rem;
     color: #4a4a4a;
     margin-bottom: 10px;
 }
 
-/* Paragraph description */
 .container p {
     font-size: 1rem;
     color: #666666;
     margin-bottom: 20px;
 }
 
-/* Input fields and textarea styling */
 .contact_inputs {
     width: 100%;
     padding: 10px;
@@ -564,30 +589,26 @@ p {
     border-radius: 5px;
     box-sizing: border-box;
     background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Keeps shadow on input fields */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
-    /* Input and textarea focus styles */
     .contact_inputs:focus {
         outline: none;
         border-color: #8b0000;
         box-shadow: 0 0 5px rgba(139, 0, 0, 0.3);
     }
 
-/* CAPTCHA question styles */
 #captchaQ {
     font-size: 1rem;
     color: #4a4a4a;
     margin-top: 10px;
 }
 
-/* CAPTCHA input field */
 #captchaInput {
     margin-top: 5px;
     font-size: 1rem;
 }
 
-/* Submit button styling */
 button[type="submit"] {
     background-color: #8b0000;
     color: #ffffff;
@@ -599,12 +620,10 @@ button[type="submit"] {
     transition: background-color 0.3s ease;
 }
 
-    /* Submit button hover effect */
     button[type="submit"]:hover {
         background-color: #a52a2a;
     }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .container {
         width: 95%;
